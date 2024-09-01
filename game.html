@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Guess The Number</h1>
+
+    <p>We have selected a random number between 1-10.See if you can guess it</p>
+
+    <label>Enter a guess :</label>
+    <input type="text" name="Name" id="demo" />
+    <input type="button" value="Submit guess" onclick="onSubmit()" />
+    <script>
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        let randomInt = getRandomInt(1, 10);
+        console.log(randomInt);
+        let y=0;
+        function onSubmit(){
+            y++;
+            let x=document.getElementById("demo").value;
+            
+            if(x>randomInt){
+                window.alert("Sorry!!Try a smaller no.")
+            }
+            else if(x<randomInt){
+                window.alert("Sorry!!Try a bigger no.")
+            }
+            else {
+              
+                window.alert(`Congratulation.you have guessed the number in ${y} times.`)}
+        }
+    </script>
+</body>
+
+</html>
